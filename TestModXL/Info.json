@@ -1,0 +1,12 @@
+{
+  "Id": "TestModXL",
+  "DisplayName": "TestModXL",
+  "Author": "Russellocean",
+  "Version": "1.0.0",
+  "ManagerVersion": "0.22.5.0",
+  "Requirements": [],
+  "AssemblyName": "TestModXL.dll",
+  "EntryMethod": "TestModXL.Main.Load",
+  "HomePage": "https://github.com/Russellocean/TestModXL",
+  "Repository": ""
+}
