@@ -46,6 +46,9 @@ namespace TestModXL
         {
             if (!isCameraPossessed)
             {
+                var actualCam = PlayerController.Instance.cameraController._actualCam;
+                cameraControllerTraverse = Traverse.Create(PlayerController.Instance.cameraController).Field<bool>("_right");
+                
                 objToCreate = new GameObject("Camera Controller");
                 Camera.main.gameObject.TryGetComponent<CinemachineBrain>(out var brain);
                 if (brain == null)
@@ -66,6 +69,8 @@ namespace TestModXL
                 
                 cinemachineFreeLook.LookAt = lookAt.transform;
                 cinemachineFreeLook.Follow = follow.transform;
+                
+                cinemachineFreeLook.ForceCameraPosition(lookAt.transform.position, Quaternion.identity);
                 
                 cinemachineFreeLook.Priority = 99;
                 
