@@ -12,7 +12,9 @@ namespace TestModXL
 #endif
     static class Main
     {
-        private static CinemachineFreeLook cinemachineVirtualCamera;
+        static GameObject objToCreate;
+        
+        private static CinemachineFreeLook cinemachineFreeLook;
         public static bool isCameraPossessed = false;
 
         public static bool Enabled;
@@ -44,6 +46,7 @@ namespace TestModXL
         {
             if (!isCameraPossessed)
             {
+                objToCreate = new GameObject("Camera Controller");
                 Camera.main.gameObject.TryGetComponent<CinemachineBrain>(out var brain);
                 if (brain == null)
                 {
@@ -52,6 +55,10 @@ namespace TestModXL
 
                 brain.m_DefaultBlend.m_Time = 1;
                 brain.m_ShowDebugText = true;
+
+                cinemachineFreeLook = objToCreate.AddComponent<CinemachineFreeLook>();
+                cinemachineFreeLook.Priority = 99;
+
             }
         }
 
