@@ -57,8 +57,19 @@ namespace TestModXL
                 brain.m_ShowDebugText = true;
 
                 cinemachineFreeLook = objToCreate.AddComponent<CinemachineFreeLook>();
-                cinemachineFreeLook.Priority = 99;
 
+                GameObject lookAt = new GameObject("LookAt");
+                GameObject follow = new GameObject("Follow");
+                
+                lookAt.transform.position.Set(0,0,0);
+                follow.transform.position.Set(1,1,1);
+                
+                cinemachineFreeLook.LookAt = lookAt.transform;
+                cinemachineFreeLook.Follow = follow.transform;
+                
+                cinemachineFreeLook.Priority = 99;
+                
+                isCameraPossessed = true;
             }
         }
 
