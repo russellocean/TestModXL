@@ -37,6 +37,12 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>References\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>References\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>References\Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="SkaterXL.Core">
       <HintPath>References\SkaterXL.Core.dll</HintPath>
     </Reference>
@@ -59,6 +65,12 @@
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>References\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>References\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>References\UnityEngine.InputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityModManager">
       <HintPath>References\UnityModManager.dll</HintPath>

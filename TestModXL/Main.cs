@@ -1,5 +1,8 @@
 ﻿using HarmonyLib;
 using System.Reflection;
+using UnityEngine;
+using System.Collections;
+using Cinemachine;
 using UnityModManagerNet;
 
 namespace TestModXL
@@ -9,6 +12,9 @@ namespace TestModXL
 #endif
     static class Main
     {
+        private static CinemachineFreeLook cinemachineVirtualCamera;
+        public static bool isCameraPossessed = false;
+
         public static bool Enabled;
         private static Harmony Harmony;
 
@@ -21,9 +27,34 @@ namespace TestModXL
 #if DEBUG
             modEntry.OnUnload = Unload;
 #endif
-
+            modEntry.OnUpdate = OnUpdate;
             return true;
         }
+
+        private static void OnUpdate(UnityModManager.ModEntry modEntry, float dt)
+        {
+            if (Input.GetKeyDown(KeyCode.Insert))
+            {
+                UITest();
+            }
+            throw new System.NotImplementedException();
+        }
+
+        private static void UITest()
+        {
+            if (!isCameraPossessed)
+            {
+                Camera.main.gameObject.TryGetComponent<CinemachineBrain>(out var brain);
+                if (brain == null)
+                {
+                    brain = Camera.main.gameObject.AddComponent<CinemachineBrain>();
+                }
+
+                brain.m_DefaultBlend.m_Time = 1;
+                brain.m_ShowDebugText = true;
+            }
+        }
+
 
         private static bool OnToggle(UnityModManager.ModEntry modEntry, bool value)
         {
